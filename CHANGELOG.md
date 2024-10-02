@@ -1,3 +1,12 @@
+## [1.2.3](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.2...v1.2.3) (2024-10-02)
+
+
+### Bug Fixes
+
+* workflow git push ([6e77569](https://github.com/crawlora-com/typescript-sdk/commit/6e7756996eff18b03108b730e612110460db0bee))
+
+
+
 ## [1.2.2](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.1...v1.2.2) (2024-10-02)
 
 
