@@ -23,6 +23,7 @@ jobs:
       with:
         node-version-file: '.nvmrc'  # You can adjust this based on your node version
         cache: 'npm'
+        registry-url: "https://registry.npmjs.org"
 
     - name: Install dependencies
       run: npm install
@@ -31,6 +32,6 @@ jobs:
       run: npm run build
 
     - name: Publish to npm
-      run: npm publish --access public
+      run: npm publish --access public --registry https://registry.npmjs.org/ --loglevel verbose
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
