@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "description": "Crawlora SDK for interacting with the Crawlora platform.",
   "files": [
     "dist",
     "README.md",
@@ -12,13 +13,27 @@
   "scripts": {
     "build": "tsc"
   },
-  "keywords": ["crawlora", "sdk", "crawling", "typescript", "package"],
+  "keywords": [
+    "crawlora",
+    "web-crawling",
+    "crawler",
+    "sdk",
+    "typescript",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/crawlora-com/typescript-sdk/issues"
+  },
+  "homepage": "https://github.com/crawlora-com/typescript-sdk#readme",
   "author": {
     "name": "Crawlora",
     "email": "git@crawlora.com"
   },
-  "license": "ISC",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crawlora-com/typescript-sdk.git"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.5.5",
     "typescript": "^5.6.2"
