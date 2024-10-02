@@ -2,6 +2,8 @@ name: Publish to npm
 
 on:
   workflow_dispatch:
+  release:
+    types: [created]
 
 jobs:
   publish:
@@ -27,9 +29,6 @@ jobs:
 
     - name: Run build
       run: npm run build
-
-    - name: versioning
-      run: npm version patch
 
     - name: Publish to npm
       run: npm publish
