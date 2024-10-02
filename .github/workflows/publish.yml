@@ -1,0 +1,32 @@
+name: Publish to npm
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4.2.0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4.0.4
+      with:
+        node-version-file: '.nvmrc'  # You can adjust this based on your node version
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run build
+      run: npm run build
+
+    - name: versioning
+      run: npm version patch
+
+    - name: Publish to npm
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
