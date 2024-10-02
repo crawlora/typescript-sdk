@@ -1,13 +1,22 @@
 {
-  "name": "@crawlora/sdk",
-  "version": "1.0.0",
+  "name": "crawlora",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["crawlora", "sdk", "crawling", "typescript", "package"],
+  "author": {
+    "name": "Crawlora",
+    "email": "git@crawlora.com"
+  },
   "license": "ISC",
   "description": "",
   "devDependencies": {
