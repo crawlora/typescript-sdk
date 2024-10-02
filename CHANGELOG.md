@@ -1,3 +1,12 @@
+## [1.2.6](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.5...v1.2.6) (2024-10-02)
+
+
+### Bug Fixes
+
+* added package json for proper module init ([7ef5886](https://github.com/crawlora-com/typescript-sdk/commit/7ef588661c4c8f675c63b035db2a154222a72bc6))
+
+
+
 ## [1.2.5](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.4...v1.2.5) (2024-10-02)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * workflow git push ([2b7ae52](https://github.com/crawlora-com/typescript-sdk/commit/2b7ae529937404791508c94305cef1ae622e5c5d))
-
-
-
-## [1.2.1](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.0...v1.2.1) (2024-10-02)
-
-
-### Bug Fixes
-
-* workflow git push ([2d4a58b](https://github.com/crawlora-com/typescript-sdk/commit/2d4a58b3852fe5eb69e3c366d1a56bc3cfb87929))
 
 
 
