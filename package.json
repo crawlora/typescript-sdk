@@ -1,6 +1,6 @@
 {
   "name": "crawlora",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Crawlora SDK for interacting with the Crawlora platform.",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/crawlora-com/typescript-sdk/issues"
   },
-  "homepage": "https://github.com/crawlora-com/typescript-sdk#readme",
+  "homepage": "https://crawlora.com",
   "author": {
     "name": "Crawlora",
     "email": "git@crawlora.com"
