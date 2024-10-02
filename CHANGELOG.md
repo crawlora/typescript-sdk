@@ -1,3 +1,12 @@
+## [1.2.4](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.3...v1.2.4) (2024-10-02)
+
+
+### Bug Fixes
+
+* added public registry ([c220fb5](https://github.com/crawlora-com/typescript-sdk/commit/c220fb57d08cc833c536e0d8dead416b2c9adab4))
+
+
+
 ## [1.2.3](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.2...v1.2.3) (2024-10-02)
 
 
