@@ -6,6 +6,11 @@ on:
 
 jobs:
   changelog:
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

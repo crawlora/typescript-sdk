@@ -6,6 +6,11 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+      issues: write
 
     steps:
     - name: Checkout repository
