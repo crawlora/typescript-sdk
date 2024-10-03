@@ -1,14 +1,23 @@
-import puppeteer, { Browser } from "puppeteer";
+import puppeteer, { Browser, PuppeteerLaunchOptions } from "puppeteer";
 
-export type FunArgs = { puppeteer: Browser };
+export type FunArgs = 
+{ 
+  puppeteer: Browser
+};
 
-export async function browser(func: (args: FunArgs) => Promise<void>) {
+export async function browser(
+  func: (args: FunArgs) => Promise<void>,
+  browserConfig: PuppeteerLaunchOptions = {}
+) {
   let browser: Browser | null = null;
 
   try {
-    browser = await puppeteer.launch();
+
+    browser = await puppeteer.launch(browserConfig);
 
     await func({ puppeteer: browser });
+
+    
   } catch (e) {
     throw e;
   } finally {
