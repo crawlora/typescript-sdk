@@ -10,6 +10,24 @@ import chromium from '@sparticuz/chromium';
 import { CHROME_PATH } from "../config";
 import { browserDebug } from "../util/debug";
 
+
+type NonNegativeInteger<T extends number> =
+    number extends T 
+        ? never 
+        : `${T}` extends `-${string}` | `${string}.${string}`
+            ? never 
+            : T;
+
+export async function wait<N extends number>(sec: NonNegativeInteger<N>){
+  const shouldWait = sec * 1000
+  browserDebug(`waiting for ${shouldWait} sec`)
+  await new Promise((res, rej) => {
+    setTimeout(() => {
+      res(true)
+    }, shouldWait)
+  })
+}
+
 const defaultConfigs: PuppeteerLaunchOptions = {
   args: [
     "--no-sandbox",
@@ -23,7 +41,7 @@ const defaultConfigs: PuppeteerLaunchOptions = {
 }
 
 export type Conf = {
-  showBrowser: boolean,
+showBrowser?: boolean,
 apikey?: string,
 proxyConfig?: z.infer<typeof ZProxy>,
 remotePortalConfig?: Partial<PluginOptions>,
@@ -35,27 +53,33 @@ export type FunArgs =
   puppeteer: Browser;
   page: Page;
   output: SequenceOutput;
-  debug: debug.Debugger
+  debug: debug.Debugger,
+  wait: <N extends number>(sec: NonNegativeInteger<N>) => Promise<void>
 };
 
 puppeteer.use(StealthPlugin())
 puppeteer.use(AnonymizeUa())
 
+
+
 export async function browser(
   func: (args: FunArgs) => Promise<void>,
-  {
+  conf? :Conf
+) {
+
+  const {
     showBrowser,
     apikey,
     proxyConfig,
     remotePortalConfig,
     browserPath,
-  } :Conf
-) {
+  } = conf || { showBrowser: false }
+
+
+
   let browser: Browser | null = null;
   
   try {
-
-    chromium.setHeadlessMode = true;
     const executablePath = browserPath || await CHROME_PATH();
 
     browserDebug(`executable path: ${executablePath}`)
@@ -79,12 +103,13 @@ export async function browser(
     .filter((v) => (([
       '--headless', 
       '', 
+      "--headless='shell'",
       '--single-process' // on desktop this is not a valid options
     ] as string[]).includes(v) ? false : true))
     
     browserDebug(`args: ${JSON.stringify(args)}`)
 
-    const conf = {...defaultConfigs, args, headless: showBrowser, executablePath }
+    const conf = {...defaultConfigs, args, headless: !showBrowser, executablePath }
     
     browserDebug(`launching browser`)
 
@@ -98,13 +123,12 @@ export async function browser(
     const page = await browser.newPage()
 
     browserDebug(`launched new page`)
-
-
+    
     const output = new SequenceOutput(apikey)
     
     browserDebug(`running callback function`)
 
-    await func({ puppeteer: browser, page, output, debug: browserDebug  });
+    await func({ puppeteer: browser, page, output, debug: browserDebug, wait  });
 
     browserDebug(`successfully running callback function`)
 
