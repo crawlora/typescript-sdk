@@ -1,3 +1,12 @@
+## [1.2.8](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.7...v1.2.8) (2024-10-03)
+
+
+### Bug Fixes
+
+* added puppet configs ([1106a24](https://github.com/crawlora-com/typescript-sdk/commit/1106a2498c498fb487baa83344bcb0173386868b))
+
+
+
 ## [1.2.7](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.6...v1.2.7) (2024-10-03)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * added public registry ([c220fb5](https://github.com/crawlora-com/typescript-sdk/commit/c220fb57d08cc833c536e0d8dead416b2c9adab4))
-
-
-
-## [1.2.3](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.2...v1.2.3) (2024-10-02)
-
-
-### Bug Fixes
-
-* workflow git push ([6e77569](https://github.com/crawlora-com/typescript-sdk/commit/6e7756996eff18b03108b730e612110460db0bee))
 
 
 
