@@ -1,4 +1,5 @@
 import axios from "axios";
+import { auth_key } from "../config";
 
 export class Crawlora {
   protected apikey?: string;
@@ -19,7 +20,7 @@ export class Crawlora {
   }
 
   setApikey(key: string) {
-    this.apikey = key;
+    this.apikey = key || auth_key;
   }
 
   protected api() {
