@@ -1,3 +1,12 @@
+## [1.2.11](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.10...v1.2.11) (2024-10-03)
+
+
+### Bug Fixes
+
+* created fix for puppeteer ([13581ae](https://github.com/crawlora-com/typescript-sdk/commit/13581ae318802bee30432dd0f9cdc5f523628ebb))
+
+
+
 ## [1.2.10](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.9...v1.2.10) (2024-10-03)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * added puppeteer ([595a197](https://github.com/crawlora-com/typescript-sdk/commit/595a197a1b580fe5f20a9a322be0f61de237819a))
-
-
-
-## [1.2.6](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.5...v1.2.6) (2024-10-02)
-
-
-### Bug Fixes
-
-* added package json for proper module init ([7ef5886](https://github.com/crawlora-com/typescript-sdk/commit/7ef588661c4c8f675c63b035db2a154222a72bc6))
 
 
 
