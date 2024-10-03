@@ -8,6 +8,7 @@ import { ZProxy } from "./proxy";
 import { z } from "zod";
 import chromium from '@sparticuz/chromium';
 import { CHROME_PATH } from "../config";
+import { browserDebug } from "../util/debug";
 
 const defaultConfigs: PuppeteerLaunchOptions = {
   args: [
@@ -21,11 +22,20 @@ const defaultConfigs: PuppeteerLaunchOptions = {
   headless: false
 }
 
+export type Conf = {
+  showBrowser: boolean,
+apikey?: string,
+proxyConfig?: z.infer<typeof ZProxy>,
+remotePortalConfig?: Partial<PluginOptions>,
+browserPath?: string
+}
+
 export type FunArgs = 
 { 
   puppeteer: Browser;
   page: Page;
-  output: SequenceOutput
+  output: SequenceOutput;
+  debug: debug.Debugger
 };
 
 puppeteer.use(StealthPlugin())
@@ -33,11 +43,13 @@ puppeteer.use(AnonymizeUa())
 
 export async function browser(
   func: (args: FunArgs) => Promise<void>,
-  headless = true,
-  apikey?: string,
-  proxy?: z.infer<typeof ZProxy>,
-  remotePortalConfig?: Partial<PluginOptions>,
-  browserPath?: string
+  {
+    showBrowser,
+    apikey,
+    proxyConfig,
+    remotePortalConfig,
+    browserPath,
+  } :Conf
 ) {
   let browser: Browser | null = null;
   
@@ -45,15 +57,20 @@ export async function browser(
 
     chromium.setHeadlessMode = true;
     const executablePath = browserPath || await CHROME_PATH();
+
+    browserDebug(`executable path: ${executablePath}`)
     
     puppeteer.use(PortalPlugin(remotePortalConfig))
     
     let proxyUrl = '';
     
-    if (proxy) {
-      const { host, protocol, port } = proxy;
+    if (proxyConfig) {
+      const { host, protocol, port } = proxyConfig;
       proxyUrl = `${protocol}://${host}:${port}`;
     }
+
+    browserDebug(`proxy: ${proxyUrl}`)
+
     
     const proxyLinks = proxyUrl ? `--proxy-server=${proxyUrl}` : '';
     
@@ -64,20 +81,41 @@ export async function browser(
       '', 
       '--single-process' // on desktop this is not a valid options
     ] as string[]).includes(v) ? false : true))
-
-    const conf = {...defaultConfigs, args, headless, executablePath }
     
+    browserDebug(`args: ${JSON.stringify(args)}`)
+
+    const conf = {...defaultConfigs, args, headless: showBrowser, executablePath }
+    
+    browserDebug(`launching browser`)
+
     browser = await puppeteer.launch(conf);
+
+    browserDebug(`launched browser`)
+
+
+    browserDebug(`launching new page`)
 
     const page = await browser.newPage()
 
+    browserDebug(`launched new page`)
+
+
     const output = new SequenceOutput(apikey)
     
-    await func({ puppeteer: browser, page, output  });
+    browserDebug(`running callback function`)
+
+    await func({ puppeteer: browser, page, output, debug: browserDebug  });
+
+    browserDebug(`successfully running callback function`)
+
 
   } catch (e) {
+    browserDebug(`received an error`)
+
     throw e;
   } finally {
+    browserDebug(`closing the browser`)
+
     await browser?.close();
   }
 }
