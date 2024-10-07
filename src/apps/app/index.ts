@@ -44,7 +44,7 @@ export class Application extends Crawlora {
     });
 
     body.screenshots.forEach((inp) => {
-      form.append("screenshots[]", createReadStream(inp));
+      form.append("screenshots", createReadStream(inp));
     });
 
     const { data } = await this.api().post(`/application`, form, {
@@ -81,7 +81,7 @@ export class Application extends Crawlora {
     });
 
     body?.screenshots?.forEach((inp) => {
-      form.append("screenshots[]", createReadStream(inp));
+      form.append("screenshots", createReadStream(inp));
     });
 
     const { data } = await this.api().put(`/application/${id}`, body, {

@@ -1,5 +1,3 @@
-import chromium from '@sparticuz/chromium';
-
 export const getEnv = (key: string, def?: string, shouldCrash = true)  => {
     const { env } = process
     const value = env[key] || def;
@@ -9,10 +7,6 @@ export const getEnv = (key: string, def?: string, shouldCrash = true)  => {
     return value
   }
 
-
-  export const CHROME_PATH = async () =>
-    process.env['PUPPETEER_EXECUTABLE_PATH'] || (await chromium.executablePath());
-  
-
   
 export const auth_key = getEnv('CRAWLORA_AUTH_KEY', undefined, false); // provided by default
+

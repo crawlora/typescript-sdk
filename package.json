@@ -45,16 +45,8 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@sparticuz/chromium": "^127.0.0",
     "axios": "^1.7.7",
-    "deepmerge-json": "^1.5.0",
     "form-data": "^4.0.0",
-    "puppeteer": "^23.5.0",
-    "puppeteer-core": "^23.5.0",
-    "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-anonymize-ua": "^2.4.6",
-    "puppeteer-extra-plugin-portal": "^3.2.1",
-    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "zod": "^3.23.8"
   }
 }
