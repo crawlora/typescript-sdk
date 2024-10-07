@@ -1,3 +1,12 @@
+## [1.2.13](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.11...v1.2.13) (2024-10-07)
+
+
+### Bug Fixes
+
+* published apps ([8a101a3](https://github.com/crawlora-com/typescript-sdk/commit/8a101a3d36329b9bc1b6de716beabaf55d279cee))
+
+
+
 ## [1.2.11](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.10...v1.2.11) (2024-10-03)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * added puppet configs ([1106a24](https://github.com/crawlora-com/typescript-sdk/commit/1106a2498c498fb487baa83344bcb0173386868b))
-
-
-
-## [1.2.7](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.6...v1.2.7) (2024-10-03)
-
-
-### Bug Fixes
-
-* added puppeteer ([595a197](https://github.com/crawlora-com/typescript-sdk/commit/595a197a1b580fe5f20a9a322be0f61de237819a))
 
 
 
