@@ -27,7 +27,7 @@ export const CreateApp = z.object({
     author: z.string(),
     version: z.string(),
     input: z.array(InputTypesSchema),
-
+    screenshots: z.string().array()
 });
 
 export const UpdateApp = z.object({
@@ -39,6 +39,7 @@ export const UpdateApp = z.object({
     author: z.string().optional(),
     version: z.string().optional(),
     input: z.array(InputTypesSchema).optional(),
+    screenshots: z.string().array().optional()
 });
 
 
