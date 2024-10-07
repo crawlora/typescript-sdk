@@ -1,5 +1,5 @@
 {
-  "name": "crawlora",
+  "name": "@crawlora/sdk",
   "version": "1.2.13",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
