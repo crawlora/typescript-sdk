@@ -1,3 +1,12 @@
+## [1.2.17](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.16...v1.2.17) (2024-10-08)
+
+
+### Bug Fixes
+
+* removed example and large files ([6caa6d3](https://github.com/crawlora-com/typescript-sdk/commit/6caa6d37a2cd877839a6364c7d264de19f53bded))
+
+
+
 ## [1.2.16](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.15...v1.2.16) (2024-10-08)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * published apps ([8a101a3](https://github.com/crawlora-com/typescript-sdk/commit/8a101a3d36329b9bc1b6de716beabaf55d279cee))
-
-
-
-## [1.2.11](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.10...v1.2.11) (2024-10-03)
-
-
-### Bug Fixes
-
-* created fix for puppeteer ([13581ae](https://github.com/crawlora-com/typescript-sdk/commit/13581ae318802bee30432dd0f9cdc5f523628ebb))
 
 
 
