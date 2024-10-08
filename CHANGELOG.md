@@ -1,3 +1,12 @@
+## [1.2.16](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.15...v1.2.16) (2024-10-08)
+
+
+### Bug Fixes
+
+* added proper input types ([7e99e47](https://github.com/crawlora-com/typescript-sdk/commit/7e99e4705aa8b902ac7c82115c27ddc26834f81d))
+
+
+
 ## [1.2.15](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.14...v1.2.15) (2024-10-07)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * created fix for puppeteer ([13581ae](https://github.com/crawlora-com/typescript-sdk/commit/13581ae318802bee30432dd0f9cdc5f523628ebb))
-
-
-
-## [1.2.10](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.9...v1.2.10) (2024-10-03)
-
-
-### Bug Fixes
-
-* created fix for puppeteer ([d5e6ee6](https://github.com/crawlora-com/typescript-sdk/commit/d5e6ee6e4e33db6e1c897f0af328d924e4f86621))
 
 
 
