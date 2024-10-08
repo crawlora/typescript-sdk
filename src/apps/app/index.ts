@@ -41,8 +41,8 @@ export class Application extends Crawlora {
 
     // Append each input item
     body.input.forEach((input) => {
-      const data = JSON.stringify(input)
-      form.append("input", data);
+      const info = JSON.stringify(input)
+      form.append("input", info);
     });
 
     body.screenshots.forEach((inp) => {
@@ -80,15 +80,15 @@ export class Application extends Crawlora {
 
     // Append each input item
     body?.input?.forEach((input) => {
-      const data = JSON.stringify(input)
-      form.append("input", JSON.stringify(input));
+      const info = JSON.stringify(input)
+      form.append("input", info);
     });
 
     body?.screenshots?.forEach((inp) => {
       form.append("screenshots", createReadStream(inp));
     });
 
-    const { data } = await this.api().put(`/application/${id}`, body, {
+    const { data } = await this.api().put(`/application/${id}`, form, {
       headers: {
         ...form.getHeaders()
       }
