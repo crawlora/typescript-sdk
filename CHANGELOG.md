@@ -1,3 +1,12 @@
+## [1.2.19](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.18...v1.2.19) (2024-10-08)
+
+
+### Bug Fixes
+
+* updated git push origin ([8a4ba0e](https://github.com/crawlora-com/typescript-sdk/commit/8a4ba0ea7575e9ade94b48e50986e8c42f68b43a))
+
+
+
 ## [1.2.18](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.17...v1.2.18) (2024-10-08)
 
 
@@ -32,15 +41,6 @@
 
 * added crawlora-sdk ([b5c9e52](https://github.com/crawlora-com/typescript-sdk/commit/b5c9e52d692870b4a5144fc6b0db7a28343f08c5))
 * added crawlora-sdk ([5099d84](https://github.com/crawlora-com/typescript-sdk/commit/5099d84b2713494e340b9f35a82685cd7344f243))
-
-
-
-## [1.2.14](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.13...v1.2.14) (2024-10-07)
-
-
-### Bug Fixes
-
-* added debug app ([9237981](https://github.com/crawlora-com/typescript-sdk/commit/92379814912726bc317fa2741f591adddec3cb14))
 
 
 
