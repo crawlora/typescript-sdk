@@ -37,6 +37,7 @@ export class Application extends Crawlora {
     form.append("banner", createReadStream(body.banner));
     form.append("author", body.author);
     form.append("version", body.version);
+    form.append("short_description", body.short_description)
 
     // Append each input item
     body.input.forEach((input) => {
@@ -60,6 +61,7 @@ export class Application extends Crawlora {
     const form = new FormData();
     form.append("title", body.title);
     form.append("description", body.description);
+    form.append("short_description", body.short_description)
     if(body.file_path){
       form.append("file", createReadStream(body.file_path));
     }
