@@ -1,0 +1,11 @@
+[
+    {
+        "type": "textarea",
+        "datatype": "string",
+        "label": "list of searches",
+        "default": "crawlora",
+        "placeholder": "Enter your search queries",
+        "name": "searches",
+        "required": true
+    }
+]

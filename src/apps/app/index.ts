@@ -40,7 +40,8 @@ export class Application extends Crawlora {
 
     // Append each input item
     body.input.forEach((input) => {
-      form.append("input[]", JSON.stringify(input));
+      const data = JSON.stringify(input)
+      form.append("input", data);
     });
 
     body.screenshots.forEach((inp) => {
@@ -77,7 +78,8 @@ export class Application extends Crawlora {
 
     // Append each input item
     body?.input?.forEach((input) => {
-      form.append("input[]", JSON.stringify(input));
+      const data = JSON.stringify(input)
+      form.append("input", JSON.stringify(input));
     });
 
     body?.screenshots?.forEach((inp) => {
