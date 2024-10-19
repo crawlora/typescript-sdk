@@ -11,6 +11,7 @@ export const UpdateSequence = z.object({
     status: z.enum(['failed', 'in_progress', 'success']).optional(),
     version: z.string().optional(),
     input: z.any().optional(),
+    error: z.string().optional()
 });
 
 
