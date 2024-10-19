@@ -1,6 +1,8 @@
 import { Crawlora } from "../main";
 import { ZProxyResponse } from "./types";
 
+export * from './types'
+
 export class Proxy extends Crawlora {
     constructor(apiKey?: string, baseUrl?: URL) {
       super(apiKey, baseUrl);
