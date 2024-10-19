@@ -1,4 +1,13 @@
-## [1.2.19](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.18...v1.2.19) (2024-10-08)
+## [1.2.20](https://github.com/crawlora-com/typescript-sdk/compare/v1.3.0...v1.2.20) (2024-10-19)
+
+
+### Bug Fixes
+
+* accepting error message ([1a879b9](https://github.com/crawlora-com/typescript-sdk/commit/1a879b9805ddc3dc81c4735a2824e1a1a1973487))
+
+
+
+# [1.3.0](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.19...v1.3.0) (2024-10-08)
 
 
 ### Bug Fixes
@@ -22,25 +31,6 @@
 ### Bug Fixes
 
 * removed example and large files ([6caa6d3](https://github.com/crawlora-com/typescript-sdk/commit/6caa6d37a2cd877839a6364c7d264de19f53bded))
-
-
-
-## [1.2.16](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.15...v1.2.16) (2024-10-08)
-
-
-### Bug Fixes
-
-* added proper input types ([7e99e47](https://github.com/crawlora-com/typescript-sdk/commit/7e99e4705aa8b902ac7c82115c27ddc26834f81d))
-
-
-
-## [1.2.15](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.14...v1.2.15) (2024-10-07)
-
-
-### Bug Fixes
-
-* added crawlora-sdk ([b5c9e52](https://github.com/crawlora-com/typescript-sdk/commit/b5c9e52d692870b4a5144fc6b0db7a28343f08c5))
-* added crawlora-sdk ([5099d84](https://github.com/crawlora-com/typescript-sdk/commit/5099d84b2713494e340b9f35a82685cd7344f243))
 
 
 
