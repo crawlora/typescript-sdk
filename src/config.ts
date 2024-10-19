@@ -10,3 +10,5 @@ export const getEnv = (key: string, def?: string, shouldCrash = true)  => {
   
 export const auth_key = getEnv('CRAWLORA_AUTH_KEY', undefined, false); // provided by default
 
+export const base_url = getEnv('CRAWLORA_BASE_URL', 'https://api.crawlora.com/api/v1', true) as string;
+

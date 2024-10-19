@@ -1,9 +1,9 @@
 import axios from "axios";
-import { auth_key } from "../config";
+import { auth_key, base_url } from "../config";
 
 export class Crawlora {
   protected apikey?: string;
-  protected baseUrl: URL = new URL("https://api.crawlora.com/api/v1");
+  protected baseUrl: URL = new URL(base_url);
 
   constructor(apiKey?: string, baseUrl?: URL) {
     if (apiKey) {
