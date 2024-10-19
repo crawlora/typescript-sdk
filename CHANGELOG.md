@@ -1,3 +1,12 @@
+## [1.2.21](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.20...v1.2.21) (2024-10-19)
+
+
+### Bug Fixes
+
+* removed data ([bc6f226](https://github.com/crawlora-com/typescript-sdk/commit/bc6f2266aaac5779d5143ad39505227a300c21f6))
+
+
+
 ## [1.2.20](https://github.com/crawlora-com/typescript-sdk/compare/v1.3.0...v1.2.20) (2024-10-19)
 
 
@@ -22,15 +31,6 @@
 ### Bug Fixes
 
 * introduced short description ([4ef1924](https://github.com/crawlora-com/typescript-sdk/commit/4ef192470bf9b09859cac669814fa63b204f2767))
-
-
-
-## [1.2.17](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.16...v1.2.17) (2024-10-08)
-
-
-### Bug Fixes
-
-* removed example and large files ([6caa6d3](https://github.com/crawlora-com/typescript-sdk/commit/6caa6d37a2cd877839a6364c7d264de19f53bded))
 
 
 
