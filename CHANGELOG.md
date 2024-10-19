@@ -1,3 +1,12 @@
+## [1.2.23](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.22...v1.2.23) (2024-10-19)
+
+
+### Bug Fixes
+
+* exported proxy ([cebc41e](https://github.com/crawlora-com/typescript-sdk/commit/cebc41e02870eac9f26ee83b36354c90a8b74e58))
+
+
+
 ## [1.2.22](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.21...v1.2.22) (2024-10-19)
 
 
@@ -22,15 +31,6 @@
 ### Bug Fixes
 
 * accepting error message ([1a879b9](https://github.com/crawlora-com/typescript-sdk/commit/1a879b9805ddc3dc81c4735a2824e1a1a1973487))
-
-
-
-# [1.3.0](https://github.com/crawlora-com/typescript-sdk/compare/v1.2.19...v1.3.0) (2024-10-08)
-
-
-### Bug Fixes
-
-* updated git push origin ([8a4ba0e](https://github.com/crawlora-com/typescript-sdk/commit/8a4ba0ea7575e9ade94b48e50986e8c42f68b43a))
 
 
 
