@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "node -r ts-node/register --env-file=.env ./src/.test/puppet.ts"
+    "test": "node -r ts-node/register --env-file=.env ./.test/main.ts"
   },
   "keywords": [
     "crawlora",
