@@ -1,5 +1,5 @@
 import axios from "axios";
-import { auth_key, base_url } from "../config";
+import { admin_key, auth_key, base_url } from "../config";
 
 export class Crawlora {
   protected apikey?: string;
@@ -28,6 +28,7 @@ export class Crawlora {
       baseURL: this.baseUrl.toString(),
       headers: {
         "x-api-key": this.apikey,
+        "x-admin-key": admin_key,
       },
     });
   }
