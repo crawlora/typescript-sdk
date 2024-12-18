@@ -5,6 +5,7 @@ export enum Input {
     checkbox = 'checkbox',
     radio = 'radio',
     select = 'select',
+    textarea = 'textarea',
 }
 
 export const InputTypesSchema = z.object({
@@ -12,9 +13,11 @@ export const InputTypesSchema = z.object({
     datatype: z.union([z.string(), z.number(), z.boolean(), z.array(z.any()), z.record(z.any())]),
     placeholder: z.string(),
     default: z.union([z.string(), z.number()]),
+    options: z.array(z.string()).optional(),
     label: z.string(),
-    regex: z.string().regex(new RegExp('.*')),
-    required: z.boolean(),
+    regex: z.string().regex(/^.*$/).optional(),
+    required: z.boolean().default(false),
+    name: z.string(),
 });
 
 
