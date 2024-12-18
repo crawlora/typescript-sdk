@@ -13,14 +13,14 @@ export class Application extends Crawlora {
     recordPerPage: number = 10,
     order: string = "desc"
   ) {
-    const { data } = await this.api().get(`/application`, {
-      params: {
-        page,
-        recordPerPage,
-        order,
-      },
-    });
-    return data;
+    try {
+      const { data } = await this.api().get(`/application`, {
+        params: { page, recordPerPage, order },
+      });
+      return data;
+    } catch (error) {
+      throw new Error(`Error fetching applications: ${(error as Error).message}`);
+    }
   }
 
   async getById(id: string) {
@@ -39,65 +39,96 @@ export class Application extends Crawlora {
     form.append("version", body.version);
     form.append("short_description", body.short_description)
 
-    // Append each input item
-    body.input.forEach((input) => {
-      const info = JSON.stringify(input)
-      form.append("input", info);
-    });
+    if (body.input && Array.isArray(body.input)) {
+      body.input.forEach((input) => {
+        const info = JSON.stringify(input);
+        form.append("input", info);
+      });
+    } else {
+      console.warn("Input is missing or not an array");
+    }
 
-    body.screenshots.forEach((inp) => {
-      form.append("screenshots", createReadStream(inp));
-    });
 
-    const { data } = await this.api().post(`/application`, form, {
-      headers: {
-        ...form.getHeaders(),
-      },
-    });
-    return data;
+    if (body.screenshots && Array.isArray(body.screenshots)) {
+      body.screenshots.forEach((inp) => {
+        form.append("screenshots", createReadStream(inp));
+      });
+    } else {
+      console.warn("Screenshots are missing or not an array");
+    }
+
+    try {
+      const { data } = await this.api().post(`/application`, form, {
+        headers: { ...form.getHeaders() },
+      });
+      return data;
+    } catch (error) {
+      throw new Error(`Error creating application: ${(error as Error).message}`);
+    }
   }
 
   async update(id: string, body: UpdateAppType) {
     const form = new FormData();
-    form.append("title", body.title);
-    form.append("description", body.description);
-    form.append("short_description", body.short_description)
-    if(body.file_path){
-      form.append("file", createReadStream(body.file_path));
+
+    if (body.title) {
+      form.append("title", body.title);
     }
 
-    if(body.icon){
+    if (body.description) {
+      form.append("description", body.description);
+    }
+
+    if (body.short_description) {
+      form.append("short_description", body.short_description);
+    }
+
+    if (body.file_path) {
+      form.append("file", createReadStream(body.file_path));
+    } else {
+      console.warn("file_path is missing for update");
+    }
+
+    if (body.icon) {
       form.append("icon", createReadStream(body.icon));
     }
 
-    if(body.banner){
+    if (body.banner) {
       form.append("banner", createReadStream(body.banner));
     }
 
-    
+
     form.append("author", body.author);
     form.append("version", body.version);
 
-    // Append each input item
-    body?.input?.forEach((input) => {
-      const info = JSON.stringify(input)
-      form.append("input", info);
-    });
+    if (body.input && Array.isArray(body.input)) {
+      body.input.forEach((input) => {
+        const info = JSON.stringify(input);
+        form.append("input", info);
+      });
+    }
 
-    body?.screenshots?.forEach((inp) => {
-      form.append("screenshots", createReadStream(inp));
-    });
+    if (body.screenshots && Array.isArray(body.screenshots)) {
+      body.screenshots.forEach((inp) => {
+        form.append("screenshots", createReadStream(inp));
+      });
+    }
 
-    const { data } = await this.api().put(`/application/${id}`, form, {
-      headers: {
-        ...form.getHeaders()
-      }
-    });
-    return data;
+    try {
+      const { data } = await this.api().put(`/application/${id}`, form, {
+        headers: { ...form.getHeaders() },
+      });
+      return data;
+    } catch (error) {
+      throw new Error(`Error updating application: ${(error as Error).message}`);
+    }
   }
 
   async delete(id: string) {
-    const { data } = await this.api().delete(`/application/${id}`);
-    return data;
+    try {
+      const { data } = await this.api().delete(`/application/${id}`);
+      return data;
+    } catch (error) {
+      throw new Error(`Error deleting application: ${(error as Error).message}`);
+    }
   }
 }
